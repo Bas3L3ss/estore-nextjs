@@ -1018,11 +1018,8 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import hero1 from "@/public/images/hero1.jpg";
-import hero2 from "@/public/images/hero2.jpg";
-import hero3 from "@/public/images/hero3.jpg";
-import hero4 from "@/public/images/hero4.jpg";
 
-const carouselImages = [hero1, hero2, hero3, hero4];
+const carouselImages = [hero1, hero1, hero1, hero1];
 
 function HeroCarousel() {
   return (
@@ -1087,7 +1084,7 @@ import FeaturedProducts from "@/components/home/FeaturedProducts";
 import Hero from "@/components/home/Hero";
 import LoadingContainer from "@/components/global/LoadingContainer";
 import { Suspense } from "react";
-function HomPage() {
+function HomePage() {
   return (
     <>
       <Hero />
@@ -1097,7 +1094,7 @@ function HomPage() {
     </>
   );
 }
-export default HomPage;
+export default HomePage;
 ```
 
 ### LoadingContainer Component
