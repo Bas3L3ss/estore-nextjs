@@ -104,15 +104,7 @@ npx shadcn-ui@latest add breadcrumb card checkbox dropdown-menu input label popo
 
 - create
 
-- navbar
-  - CartButton
-  - DarkMode
-  - LinksDropdown
-  - Logo
-  - Navbar
-  - NavSearch
-  - SignOutLink
-  - UserIcon
+- ## navbar
 
 ### Container Component
 
