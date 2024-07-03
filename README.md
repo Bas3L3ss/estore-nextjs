@@ -520,6 +520,7 @@ generator client {
 model TestProfile {
 id  String @id @default(uuid())
 name String
+}
 
 ```
 
