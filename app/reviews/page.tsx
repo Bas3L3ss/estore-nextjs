@@ -1,8 +1,7 @@
-import { deleteReviewAction, fetchProductReviewsByUser } from "@/utils/actions";
+import { fetchProductReviewsByUser } from "@/utils/actions";
 import ReviewCard from "@/components/reviews/ReviewCard";
 import SectionTitle from "@/components/global/SectionTitle";
-import FormContainer from "@/components/form/FormContainer";
-import { IconButton } from "@/components/form/Buttons";
+import DeleteReview from "@/components/reviews/DeleteReview";
 async function ReviewsPage() {
   const reviews = await fetchProductReviewsByUser();
   if (reviews.length === 0)
@@ -31,14 +30,5 @@ async function ReviewsPage() {
     </>
   );
 }
-
-export const DeleteReview = ({ reviewId }: { reviewId: string }) => {
-  const deleteReview = deleteReviewAction.bind(null, { reviewId });
-  return (
-    <FormContainer action={deleteReview}>
-      <IconButton actionType="delete" />
-    </FormContainer>
-  );
-};
 
 export default ReviewsPage;

@@ -2,8 +2,8 @@ import { fetchProductReviews } from "@/utils/actions";
 
 import ReviewCard from "./ReviewCard";
 import SectionTitle from "../global/SectionTitle";
-import { DeleteReview } from "@/app/reviews/page";
 import { auth } from "@clerk/nextjs/server";
+import DeleteReview from "./DeleteReview";
 async function ProductReviews({ productId }: { productId: string }) {
   const reviews = await fetchProductReviews(productId);
   const user = auth();
