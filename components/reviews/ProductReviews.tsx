@@ -2,8 +2,11 @@ import { fetchProductReviews } from "@/utils/actions";
 
 import ReviewCard from "./ReviewCard";
 import SectionTitle from "../global/SectionTitle";
+import { DeleteReview } from "@/app/reviews/page";
+import { auth } from "@clerk/nextjs/server";
 async function ProductReviews({ productId }: { productId: string }) {
   const reviews = await fetchProductReviews(productId);
+  const user = auth();
 
   return (
     <div className="mt-16">
@@ -18,7 +21,13 @@ async function ProductReviews({ productId }: { productId: string }) {
             image: authorImageUrl,
             name: authorName,
           };
-          return <ReviewCard key={review.id} reviewInfo={reviewInfo} />;
+          return (
+            <ReviewCard key={review.id} reviewInfo={reviewInfo}>
+              {review.clerkId == user.userId && (
+                <DeleteReview reviewId={review.id} />
+              )}
+            </ReviewCard>
+          );
         })}
       </div>
     </div>
